@@ -1,0 +1,254 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Tahoma, Arial;
+}
+
+.container {
+    margin: 20px auto;
+    width: 1000px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid rgb(234, 234, 234);
+    align-items: center;
+}
+
+.title {
+    font-weight: 700;
+    color: darkred;
+}
+
+#Word-from {
+    font-weight: 600;
+    color: darkred;
+    text-transform: capitalize;
+}
+
+.row {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0px;
+    border-bottom: 2px solid rgb(234, 234, 234);
+}
+
+.hangman-draw {
+    padding: 20px;
+    background-color: #eee;
+    width: 50%;
+}
+
+.letters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: 50%;
+    text-transform: uppercase;
+}
+
+.letter-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    font-size: 25px;
+    font-weight: 700;
+    background-color: #009688;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+}
+
+.letters-guess {
+    width: 100%;
+    padding: 20px;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.letters-guess span {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 4px solid darkred;
+    background-color: white;
+    font-size: 25px;
+    font-weight: 700;
+    color: darkred;
+}
+
+.change-background {
+    background-color: #00968833;
+}
+
+.hangman-draw {
+    position: relative;
+}
+
+.base {
+    position: absolute;
+    bottom: 20px;
+    background-color: #222;
+    width: 60px;
+    height: 5px;
+    left: 40%;
+    transform: translate(-50%, 0px);
+    -webkit-transform: translate(-50%, 0px);
+    -moz-transform: translate(-50%, 0px);
+    -ms-transform: translate(-50%, 0px);
+    -o-transform: translate(-50%, 0px);
+}
+
+.found-space {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 4px solid darkred;
+    background-color: rgb(7, 101, 163);
+    font-size: 25px;
+    font-weight: 700;
+    color: darkred;
+}
+
+.colum {
+    position: absolute;
+    background-color: black;
+    height: 246px;
+    width: 5px;
+    left: 40%;
+    transform: translate(-50%, 0px);
+}
+
+.the-hang {
+    position: absolute;
+    background-color: black;
+    height: 5px;
+    width: 100px;
+    left: 50%;
+    top: 30px;
+    transform: translate(-50%, 0px);
+}
+
+.the-hanging {
+    position: absolute;
+    background-color: black;
+    height: 30px;
+    width: 5px;
+    left: 60%;
+    top: 30px;
+    transform: translate(-50%, 0px);
+}
+
+
+.the-rope {
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    border: 4px black dashed;
+    left: 60%;
+    top: 56px;
+    transform: translate(-50%, 0px);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.the-man {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 4px black solid;
+    left: 55%;
+    top: 66px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    margin: 0;
+}
+
+.body {
+    position: absolute;
+    background-color: black;
+    height: 110px;
+    width: 5px;
+    left: 60%;
+    top: 112px;
+    transform: translate(-50%, 0px);
+}
+
+.hand-left {
+    position: absolute;
+    background-color: black;
+        height: 5px;
+        width: 50px;
+        left: 56%;
+        top: 143px;
+        transform: translate(-50%, 0px) rotate(-37deg);
+}
+
+.hand-right {
+    position: absolute;
+    background-color: black;
+    height: 5px;
+    width: 50px;
+    left: 64%;
+    top: 143px;
+    transform: translate(-50%, 0px) rotate(-145deg);
+}
+
+.leg-left {
+    position: absolute;
+    background-color: black;
+        height: 5px;
+        width: 50px;
+        left: 56%;
+        top: 230px;
+        transform: translate(-50%, 0px) rotate(-37deg);
+}
+
+.leg-right {
+    position: absolute;
+    background-color: black;
+    height: 5px;
+    width: 50px;
+    left: 64%;
+    top: 230px;
+    transform: translate(-50%, 0px) rotate(-145deg);
+}
+
+.popup {
+    position: fixed;
+    background-color: rgb(0 150 136 / 90%);
+    width: 80%;
+    top: 16%;
+    left: 10%;
+    text-align: center;
+    font-size: 41px;
+    color: rgb(255, 255, 255);
+    padding: 100px 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204);
+    border-image: initial;
+}
